@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realestates>
+    <externalId>100011</externalId>
+    <title>RestAPI - Immobilienscout24 Testobjekt! +++BITTE+++ NICHT kontaktieren - Industry</title>
+    <creationDate>2013-12-06T15:12:09</creationDate>
+    <lastModificationDate>2014-07-08T15:12:09</lastModificationDate>
+    <thermalCharacteristic>32.678</thermalCharacteristic>
+    <energyConsumptionContainsWarmWater>YES</energyConsumptionContainsWarmWater>
+    <buildingEnergyRatingType>ENERGY_CONSUMPTION</buildingEnergyRatingType>
+    <additionalArea>435.017</additionalArea>
+    <numberOfFloors>three</numberOfFloors>
+    <additionalCosts>
+        <value>249.014</value>
+        <currency>EUR</currency>
+        <marketingType>RENT</marketingType>
+        <priceIntervalType>MONTH</priceIntervalType>
+    </additionalCosts>
+</realestates>

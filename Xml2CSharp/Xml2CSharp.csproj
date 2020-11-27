@@ -43,13 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class.cs" />
-    <Compile Include="ClassInfoWriter.cs" />
+    <Compile Include="ClassWriters\CSharpClassWriter.cs" />
+    <Compile Include="ClassWriters\JavaClassWriter.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Field.cs" />
+    <Compile Include="IClassWriter.cs" />
+    <Compile Include="ISettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XElementExtension.cs" />
-    <Compile Include="Xml2CSharpConverer.cs" />
+    <Compile Include="Xml2CodeConverter.cs" />
     <Compile Include="XmlType.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

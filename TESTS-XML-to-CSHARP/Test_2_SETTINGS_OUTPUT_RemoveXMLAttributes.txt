@@ -1,0 +1,28 @@
+// using System.Xml.Serialization;
+//  XmlSerializer serializer = new XmlSerializer(typeof(realestates));
+// using (StringReader reader = new StringReader(xml))
+// {
+//     var test = (realestates)serializer.Deserialize(reader);
+// }
+
+
+public class additionalCosts { 
+	public string value { get; set; } 
+	public string currency { get; set; } 
+	public string marketingType { get; set; } 
+	public string priceIntervalType { get; set; } 
+}
+
+public class realestates { 
+	public string externalId { get; set; } 
+	public string title { get; set; } 
+	public string creationDate { get; set; } 
+	public string lastModificationDate { get; set; } 
+	public string thermalCharacteristic { get; set; } 
+	public string energyConsumptionContainsWarmWater { get; set; } 
+	public string buildingEnergyRatingType { get; set; } 
+	public string additionalArea { get; set; } 
+	public string numberOfFloors { get; set; } 
+	public additionalCosts additionalCosts { get; set; } 
+}
+

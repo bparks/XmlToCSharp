@@ -1,0 +1,43 @@
+// using System.Xml.Serialization;
+//  XmlSerializer serializer = new XmlSerializer(typeof(realestates));
+// using (StringReader reader = new StringReader(xml))
+// {
+//     var test = (realestates)serializer.Deserialize(reader);
+// }
+
+[XmlRoot(ElementName="additionalCosts", Namespace="")]
+public class additionalCosts { 
+	[XmlElement(ElementName="value", Namespace="")] 
+	public string value { get; set; } 
+	[XmlElement(ElementName="currency", Namespace="")] 
+	public string currency { get; set; } 
+	[XmlElement(ElementName="marketingType", Namespace="")] 
+	public string marketingType { get; set; } 
+	[XmlElement(ElementName="priceIntervalType", Namespace="")] 
+	public string priceIntervalType { get; set; } 
+}
+
+[XmlRoot(ElementName="realestates", Namespace="")]
+public class realestates { 
+	[XmlElement(ElementName="externalId", Namespace="")] 
+	public string externalId { get; set; } 
+	[XmlElement(ElementName="title", Namespace="")] 
+	public string title { get; set; } 
+	[XmlElement(ElementName="creationDate", Namespace="")] 
+	public string creationDate { get; set; } 
+	[XmlElement(ElementName="lastModificationDate", Namespace="")] 
+	public string lastModificationDate { get; set; } 
+	[XmlElement(ElementName="thermalCharacteristic", Namespace="")] 
+	public string thermalCharacteristic { get; set; } 
+	[XmlElement(ElementName="energyConsumptionContainsWarmWater", Namespace="")] 
+	public string energyConsumptionContainsWarmWater { get; set; } 
+	[XmlElement(ElementName="buildingEnergyRatingType", Namespace="")] 
+	public string buildingEnergyRatingType { get; set; } 
+	[XmlElement(ElementName="additionalArea", Namespace="")] 
+	public string additionalArea { get; set; } 
+	[XmlElement(ElementName="numberOfFloors", Namespace="")] 
+	public string numberOfFloors { get; set; } 
+	[XmlElement(ElementName="additionalCosts", Namespace="")] 
+	public additionalCosts additionalCosts { get; set; } 
+}
+

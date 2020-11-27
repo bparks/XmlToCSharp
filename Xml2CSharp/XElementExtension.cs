@@ -42,7 +42,7 @@ namespace Xml2CSharp
             foreach (var element in xElement.Elements().ToList())
             {
                 var tempClass = ElementToClass(element, classes);
-                var type = element.IsEmpty() ? "String" : tempClass.Name;
+                var type = element.IsEmpty() ? "string" : tempClass.Name;
 
                 yield return new Field
                 {
