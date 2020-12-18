@@ -28,6 +28,14 @@ namespace Xml2CSharp.ClassWriters
         private bool UsePascalCase { get { return _settings != null && _settings.ContainsKey("UsePascalCase") && _settings["UsePascalCase"].ToString().ToLower() == "true"; } }
         private bool UseFields { get { return _settings != null && _settings.ContainsKey("UseFields") && _settings["UseFields"].ToString().ToLower() == "true"; } }
 
+
+        /*
+         
+        NOTE WHEN YOU ARE MAPPING THE XML TO C# TYPES
+        [SCEHMANAME]:NIL = "TRUE" means that the property is nullable and you should mapping correctly to the nullable type
+         
+         */
+
         public string Write(IEnumerable<Class> classInfo, string rootName)
         {
             StringBuilder sb = new StringBuilder();

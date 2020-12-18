@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<realestates xmlns:h="http://www.w3.org/TR/html4/" xmlns:f="https://www.w3schools.com/furniture">
+<!-- <realestates xmlns:h="http://www.w3.org/TR/html4/" xmlns:f="https://www.w3schools.com/furniture"> -->
+	<realestates>
 	<externalId>100011</externalId>
 	<title>RestAPI - Immobilienscout24 Testobjekt! +++BITTE+++ NICHT kontaktieren - Industry</title>
 	<creationDate>2013-12-06T15:12:09</creationDate>

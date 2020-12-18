@@ -56,5 +56,4 @@ Set-Content -Path $fullPath -Value $tesformattedString
 
 Set-Content -Path $fullPathOutput -Value "dfasdfadfasdf" # DO NOT REMOVE : IF THIS IS EMPTY THE TEST WILL SUCCEED, WE WANT TO FAIL INITIALLY
 
-
 Set-ExecutionPolicy Restricted -Confirm:$false -Force;

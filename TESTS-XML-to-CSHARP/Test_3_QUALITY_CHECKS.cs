@@ -26,4 +26,5 @@ namespace TESTS_XML_to_CSHARP
             Assert.AreEqual(resultsCompare.Replace(Environment.NewLine, "").Replace(" ", "").Replace("\t", ""), returnVal.Replace(Environment.NewLine, "").Replace(" ", "").Replace("\t", ""));
         }
     }
-}
+
+ }
