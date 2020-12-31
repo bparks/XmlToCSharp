@@ -21,7 +21,7 @@ namespace Xml2CSharp
             {
                 var xElement = XElement.Parse(xml);
                 var elements = xElement.ExtractClassInfo();
-                return _writer.Write(elements, xElement.Name.ToString());
+                return _writer.Write(elements, xElement.Name.LocalName.ToString());
             }
             catch (Exception ex)
             {
