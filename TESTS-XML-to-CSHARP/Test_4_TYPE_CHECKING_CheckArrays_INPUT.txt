@@ -1,9 +1,31 @@
-   <arrayofobject>
-        <position>
-            <internet>testfd</internet>
-        </position>
-           <position>
+<arrayofobject>
+    <position> 
+        <innerobject> 
+            <innerInnerField>true</innerInnerField>
+        </innerobject>
+    </position>
+
+    <position> 
+        <innerobject> 
+            <innerInnerField>true</innerInnerField>
+        </innerobject>
+    </position>
+
+    <position> 
+        <innerobject>true</innerobject>
+    </position>
+
+        <position> 
+        <innerobject>dfasdfas</innerobject>
+    </position>
+
+<position> 
+        <innerobject> 
             <internet>dfd</internet>
-            <anotherfield>1</anotherfield>
-        </position>
-    </arrayofobject>
+        </innerobject>
+        <innerobject> 
+            <innerInnerField>true</innerInnerField>
+        </innerobject>
+    </position>
+
+</arrayofobject>

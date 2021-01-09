@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realestates>
+    <arrayofint>
+            <int>1</int>
+            <int>2</int>
+            <int>2</int>
+    </arrayofint>
+    
+    <arrayofstring>
+            <string>testas13</string>
+            <string>132</string>
+            <string>12314</string>
+    </arrayofstring>
+
+    <arrayofobject>
+        <position>
+            <internet>testfd</internet>
+        </position>
+           <position>
+            <internet>dfd</internet>
+        </position>
+    </arrayofobject>
+</realestates>

@@ -46,6 +46,7 @@ namespace Xml2CSharp.ClassWriters
                 case XmlType.NullableInteger: return "int?";
                 case XmlType.NullableLong: return "long?";
                 case XmlType.NullableDate: return "DateTime?";
+                case XmlType.Class: return field.Name;
                 case XmlType.NullableSomething: return "object";
                // case XmlType.Object: return type.NewAssignedName; // You need to use this for setting the object in the whatever
                 case XmlType.String: return "string";
@@ -118,7 +119,7 @@ namespace Xml2CSharp.ClassWriters
                         if (ReservedKeywords.Contains(field.Name)) field.Name = "@" + field.Name;
 
                     // If it's a class property then set the current name of the property as the name of the class
-                    var xmltype = field.InternalXmlType == XmlType.Class ? field.Name: GetTypeName(field);
+                    var xmltype = field.XmlType == XmlType.Class ? field.Name: GetTypeName(field);
                     if (UseFields)
                         sb.AppendFormat("\tpublic {0} {1}; {2}", xmltype, field.Name, Environment.NewLine);
                     else

@@ -25,7 +25,7 @@ namespace Xml2CSharp
         }
 
         public string Name { get; set; }
-        public IEnumerable<Field> Fields { get; set; }
+        public List<Field> Fields { get; set; }
         public string XmlName { get; set; }
         public string Namespace { get; set; }
 

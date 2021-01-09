@@ -1,0 +1,66 @@
+public class ExternalId { 
+	public String getTeststring() { 
+		 return this.Teststring; } 
+	public void setTeststring(String Teststring) { 
+		 this.Teststring = Teststring; } 
+	String Teststring;
+	public int getTestint() { 
+		 return this.Testint; } 
+	public void setTestint(int Testint) { 
+		 this.Testint = Testint; } 
+	int Testint;
+	public String getTestbool() { 
+		 return this.Testbool; } 
+	public void setTestbool(String Testbool) { 
+		 this.Testbool = Testbool; } 
+	String Testbool;
+	public double getTestdouble() { 
+		 return this.Testdouble; } 
+	public void setTestdouble(double Testdouble) { 
+		 this.Testdouble = Testdouble; } 
+	double Testdouble;
+	public int getText() { 
+		 return this.Text; } 
+	public void setText(int Text) { 
+		 this.Text = Text; } 
+	int Text;
+}
+
+public class Realestates { 
+	public ExternalId getExternalId() { 
+		 return this.ExternalId; } 
+	public void setExternalId(ExternalId ExternalId) { 
+		 this.ExternalId = ExternalId; } 
+	ExternalId ExternalId;
+	public String getTitle() { 
+		 return this.Title; } 
+	public void setTitle(String Title) { 
+		 this.Title = Title; } 
+	String Title;
+	public Date getCreationDate() { 
+		 return this.CreationDate; } 
+	public void setCreationDate(Date CreationDate) { 
+		 this.CreationDate = CreationDate; } 
+	Date CreationDate;
+	public Date getLastModificationDate() { 
+		 return this.LastModificationDate; } 
+	public void setLastModificationDate(Date LastModificationDate) { 
+		 this.LastModificationDate = LastModificationDate; } 
+	Date LastModificationDate;
+	public double getDoubletestingprop() { 
+		 return this.Doubletestingprop; } 
+	public void setDoubletestingprop(double Doubletestingprop) { 
+		 this.Doubletestingprop = Doubletestingprop; } 
+	double Doubletestingprop;
+	public String getEnergyConsumptionContainsWarmWater() { 
+		 return this.EnergyConsumptionContainsWarmWater; } 
+	public void setEnergyConsumptionContainsWarmWater(String EnergyConsumptionContainsWarmWater) { 
+		 this.EnergyConsumptionContainsWarmWater = EnergyConsumptionContainsWarmWater; } 
+	String EnergyConsumptionContainsWarmWater;
+	public boolean getBoolean() { 
+		 return this.Boolean; } 
+	public void setBoolean(boolean Boolean) { 
+		 this.Boolean = Boolean; } 
+	boolean Boolean;
+}
+

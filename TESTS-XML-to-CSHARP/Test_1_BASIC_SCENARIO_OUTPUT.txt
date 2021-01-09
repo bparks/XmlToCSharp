@@ -1,43 +1,56 @@
 // using System.Xml.Serialization;
-//  XmlSerializer serializer = new XmlSerializer(typeof(realestates));
+// XmlSerializer serializer = new XmlSerializer(typeof(realestates));
 // using (StringReader reader = new StringReader(xml))
 // {
-//     var test = (realestates)serializer.Deserialize(reader);
+//    var test = (realestates)serializer.Deserialize(reader);
 // }
 
 [XmlRoot(ElementName="additionalCosts")]
 public class additionalCosts { 
+
 	[XmlElement(ElementName="value")] 
-	public string value { get; set; } 
+	public double value { get; set; } 
+
 	[XmlElement(ElementName="currency")] 
 	public string currency { get; set; } 
+
 	[XmlElement(ElementName="marketingType")] 
 	public string marketingType { get; set; } 
+
 	[XmlElement(ElementName="priceIntervalType")] 
 	public string priceIntervalType { get; set; } 
 }
 
 [XmlRoot(ElementName="realestates")]
 public class realestates { 
+
 	[XmlElement(ElementName="externalId")] 
-	public string externalId { get; set; } 
+	public int externalId { get; set; } 
+
 	[XmlElement(ElementName="title")] 
 	public string title { get; set; } 
+
 	[XmlElement(ElementName="creationDate")] 
-	public string creationDate { get; set; } 
+	public DateTime creationDate { get; set; } 
+
 	[XmlElement(ElementName="lastModificationDate")] 
-	public string lastModificationDate { get; set; } 
+	public DateTime lastModificationDate { get; set; } 
+
 	[XmlElement(ElementName="thermalCharacteristic")] 
-	public string thermalCharacteristic { get; set; } 
+	public double thermalCharacteristic { get; set; } 
+
 	[XmlElement(ElementName="energyConsumptionContainsWarmWater")] 
 	public string energyConsumptionContainsWarmWater { get; set; } 
+
 	[XmlElement(ElementName="buildingEnergyRatingType")] 
 	public string buildingEnergyRatingType { get; set; } 
+
 	[XmlElement(ElementName="additionalArea")] 
-	public string additionalArea { get; set; } 
+	public double additionalArea { get; set; } 
+
 	[XmlElement(ElementName="numberOfFloors")] 
 	public string numberOfFloors { get; set; } 
+
 	[XmlElement(ElementName="additionalCosts")] 
 	public additionalCosts additionalCosts { get; set; } 
 }
-

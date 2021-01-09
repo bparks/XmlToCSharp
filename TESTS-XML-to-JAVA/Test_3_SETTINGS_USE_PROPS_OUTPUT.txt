@@ -1,0 +1,66 @@
+public class externalId { 
+	public String getteststring() { 
+		 return this.teststring; } 
+	public void setteststring(String teststring) { 
+		 this.teststring = teststring; } 
+	String teststring;
+	public int gettestint() { 
+		 return this.testint; } 
+	public void settestint(int testint) { 
+		 this.testint = testint; } 
+	int testint;
+	public String gettestbool() { 
+		 return this.testbool; } 
+	public void settestbool(String testbool) { 
+		 this.testbool = testbool; } 
+	String testbool;
+	public double gettestdouble() { 
+		 return this.testdouble; } 
+	public void settestdouble(double testdouble) { 
+		 this.testdouble = testdouble; } 
+	double testdouble;
+	public int gettext() { 
+		 return this.text; } 
+	public void settext(int text) { 
+		 this.text = text; } 
+	int text;
+}
+
+public class realestates { 
+	public externalId getexternalId() { 
+		 return this.externalId; } 
+	public void setexternalId(externalId externalId) { 
+		 this.externalId = externalId; } 
+	externalId externalId;
+	public String gettitle() { 
+		 return this.title; } 
+	public void settitle(String title) { 
+		 this.title = title; } 
+	String title;
+	public Date getcreationDate() { 
+		 return this.creationDate; } 
+	public void setcreationDate(Date creationDate) { 
+		 this.creationDate = creationDate; } 
+	Date creationDate;
+	public Date getlastModificationDate() { 
+		 return this.lastModificationDate; } 
+	public void setlastModificationDate(Date lastModificationDate) { 
+		 this.lastModificationDate = lastModificationDate; } 
+	Date lastModificationDate;
+	public double getdoubletestingprop() { 
+		 return this.doubletestingprop; } 
+	public void setdoubletestingprop(double doubletestingprop) { 
+		 this.doubletestingprop = doubletestingprop; } 
+	double doubletestingprop;
+	public String getenergyConsumptionContainsWarmWater() { 
+		 return this.energyConsumptionContainsWarmWater; } 
+	public void setenergyConsumptionContainsWarmWater(String energyConsumptionContainsWarmWater) { 
+		 this.energyConsumptionContainsWarmWater = energyConsumptionContainsWarmWater; } 
+	String energyConsumptionContainsWarmWater;
+	public boolean get_boolean() { 
+		 return this._boolean; } 
+	public void set_boolean(boolean _boolean) { 
+		 this._boolean = _boolean; } 
+	boolean _boolean;
+}
+

@@ -1,8 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<realestates>
-	<externalId teststring="string" testint="1" testbool="true" testdouble="23.231231" testdatetime="2013-12-06T15:12:09"  testdatetime2="2013-12-06T15:12:09"  >100011</externalId>
+<arrayofobject>
+	<position>
+		<innerobject>
+			<innerInnerField>true</innerInnerField>
+		</innerobject>
+	</position>
 
-	<testclass>
-		<testint>1231</testint>
-	</testclass>
-</realestates>
+	<position>
+		<innerobject>
+			<innerInnerField>true</innerInnerField>
+		</innerobject>
+	</position>
+
+	<position>
+		<innerobject>true</innerobject>
+	</position>
+
+	<position>
+		<innerobject>dfasdfas</innerobject>
+	</position>
+
+	<position>
+		<innerobject>
+			<internet>dfd</internet>
+		</innerobject>
+		<innerobject>
+			<innerInnerField>true</innerInnerField>
+		</innerobject>
+	</position>
+
+</arrayofobject>

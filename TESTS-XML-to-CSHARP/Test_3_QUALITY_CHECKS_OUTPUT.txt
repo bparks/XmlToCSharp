@@ -1,21 +1,26 @@
 // using System.Xml.Serialization;
-//  XmlSerializer serializer = new XmlSerializer(typeof(@class));
+// XmlSerializer serializer = new XmlSerializer(typeof(@class));
 // using (StringReader reader = new StringReader(xml))
 // {
-//     var test = (@class)serializer.Deserialize(reader);
+//    var test = (@class)serializer.Deserialize(reader);
 // }
 
 [XmlRoot(ElementName="class")]
 public class @class { 
+
 	[XmlElement(ElementName="test")] 
-	public string test { get; set; } 
+	public int test { get; set; } 
+
 	[XmlElement(ElementName="as")] 
-	public string @as { get; set; } 
+	public int @as { get; set; } 
+
 	[XmlElement(ElementName="base")] 
-	public string @base { get; set; } 
+	public int @base { get; set; } 
+
 	[XmlElement(ElementName="bool")] 
-	public string @bool { get; set; } 
+	public int @bool { get; set; } 
+
 	[XmlElement(ElementName="break")] 
-	public string @break { get; set; } 
+	public int @break { get; set; } 
 }
 

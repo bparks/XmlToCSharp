@@ -1,1 +1,50 @@
-dfasdfadfasdf
+// using System.Xml.Serialization;
+// XmlSerializer serializer = new XmlSerializer(typeof(realestates));
+// using (StringReader reader = new StringReader(xml))
+// {
+//    var test = (realestates)serializer.Deserialize(reader);
+// }
+
+[XmlRoot(ElementName="arrayofint")]
+public class arrayofint { 
+
+	[XmlElement(ElementName="testinner")] 
+	public List<int> testinner { get; set; } 
+}
+
+[XmlRoot(ElementName="position")]
+public class position { 
+
+	[XmlElement(ElementName="testouter")] 
+	public string testouter { get; set; } 
+
+	[XmlElement(ElementName="internet")] 
+	public internet internet { get; set; } 
+}
+
+[XmlRoot(ElementName="internet")]
+public class internet { 
+
+	[XmlElement(ElementName="innertesting")] 
+	public List<string> innertesting { get; set; } 
+}
+
+[XmlRoot(ElementName="arrayofobject")]
+public class arrayofobject { 
+
+	[XmlElement(ElementName="position")] 
+	public List<position> position { get; set; } 
+}
+
+[XmlRoot(ElementName="realestates")]
+public class realestates { 
+
+	[XmlElement(ElementName="arrayofint")] 
+	public arrayofint arrayofint { get; set; } 
+
+	[XmlElement(ElementName="position")] 
+	public position position { get; set; } 
+
+	[XmlElement(ElementName="arrayofobject")] 
+	public arrayofobject arrayofobject { get; set; } 
+}

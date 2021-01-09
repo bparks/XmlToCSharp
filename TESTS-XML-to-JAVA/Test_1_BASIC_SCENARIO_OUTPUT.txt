@@ -1,20 +1,20 @@
 public class additionalCosts { 
-	public String value;
-	public String currency ;
-	public String marketingType ;
-	public String priceIntervalType ;
+	public double value;
+	public String currency;
+	public String marketingType;
+	public String priceIntervalType;
 }
 
 public class realestates { 
-	public String externalId ;
-	public String title ;
-	public String creationDate ;
-	public String lastModificationDate ;
-	public String thermalCharacteristic ;
-	public String energyConsumptionContainsWarmWater ;
-	public String buildingEnergyRatingType ;
-	public String additionalArea ;
-	public String numberOfFloors ;
-	public additionalCosts additionalCosts ;
+	public int externalId;
+	public String title;
+	public Date creationDate;
+	public Date lastModificationDate;
+	public double thermalCharacteristic;
+	public String energyConsumptionContainsWarmWater;
+	public String buildingEnergyRatingType;
+	public double additionalArea;
+	public String numberOfFloors;
+	public additionalCosts additionalCosts;
 }
 

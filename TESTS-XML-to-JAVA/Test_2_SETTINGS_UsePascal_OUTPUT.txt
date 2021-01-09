@@ -1,0 +1,18 @@
+public class ExternalId { 
+	public String Teststring;
+	public int Testint;
+	public String Testbool;
+	public double Testdouble;
+	public int Text;
+}
+
+public class Realestates { 
+	public ExternalId ExternalId;
+	public String Title;
+	public Date CreationDate;
+	public Date LastModificationDate;
+	public double Doubletestingprop;
+	public String EnergyConsumptionContainsWarmWater;
+	public boolean Boolean;
+}
+
