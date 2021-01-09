@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realestates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <externalId_nullable xsi:nil="true">100011</externalId_nullable>
+    <title_nullable xsi:nil="true">RestAPI - Immobilienscout24 Testobjekt! +++BITTE+++ NICHT kontaktieren - Industry</title_nullable>
+    <creationDate_nullable xsi:nil="true">2013-12-06T15:12:09</creationDate_nullable>
+    <lastModificationDate_nullable xsi:nil="true">2014-07-08T15:12:09</lastModificationDate_nullable>
+    <doubletestingprop_nullable xsi:nil="true">32.678</doubletestingprop_nullable>
+    <boolean_nullable xsi:nil="true">true</boolean_nullable>
+
+
+// You need to put the xml nullable attribute and check the case where the properties are nullable
+// Create a class with nullable properties and serialize and deserialize them
+    public class MyClass
+{
+   [XmlElement(IsNullable = false)]
+   public string Group;
+}
+
+public class MyClass
+{
+   [XmlElement(IsNullable = false)]
+   public string Group;
+}
+
+public class MyClass
+{
+   [XmlElement(IsNullable = false)]
+   public string Group;
+}
+</realestates>

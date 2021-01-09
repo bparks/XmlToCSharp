@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realestates>
+    <externalId teststring="string" testint="1" testbool="yes" testdouble="23.231231" >100011</externalId>
+    <title>RestAPI - Immobilienscout24 Testobjekt! +++BITTE+++ NICHT kontaktieren - Industry</title>
+    <creationDate>2013-12-06T15:12:09</creationDate>
+    <lastModificationDate>2014-07-08T15:12:09</lastModificationDate>
+    <doubletestingprop>32.678</doubletestingprop>
+    <energyConsumptionContainsWarmWater>YES</energyConsumptionContainsWarmWater>
+    <boolean>true</boolean>
+</realestates>

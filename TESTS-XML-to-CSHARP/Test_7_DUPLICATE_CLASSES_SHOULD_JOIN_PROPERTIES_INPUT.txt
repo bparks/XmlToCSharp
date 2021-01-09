@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realestates>
+    <arrayofint>
+        <testinner>1</testinner>
+        <testinner>1</testinner>
+        <testinner>1</testinner>
+    </arrayofint>
+  <position>
+            <testouter>dfd</testouter>
+        </position>
+  <arrayofobject>
+        <position>testfd
+            <internet>
+			  	<innertesting>dfasdfa</innertesting>
+				<innertesting>fsdfasf</innertesting>
+		  	</internet>
+        </position>
+           <position>
+            <internet>dfd</internet>
+        </position>
+    </arrayofobject>
+</realestates>

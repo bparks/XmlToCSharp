@@ -1,33 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<realestates>
+	<externalId teststring="string" testint="1" testbool="true" testdouble="23.231231" testdatetime="2013-12-06T15:12:09"  testdatetime2="2013-12-06T15:12:09"  >100011</externalId>
 
-<!-- <realestates xmlns:h="http://www.w3.org/TR/html4/" xmlns:f="https://www.w3schools.com/furniture"> -->
-	<realestates>
-	<externalId>100011</externalId>
-	<title>RestAPI - Immobilienscout24 Testobjekt! +++BITTE+++ NICHT kontaktieren - Industry</title>
-	<creationDate>2013-12-06T15:12:09</creationDate>
-	<lastModificationDate>2014-07-08T15:12:09</lastModificationDate>
-	<thermalCharacteristic>32.678</thermalCharacteristic>
-	<energyConsumptionContainsWarmWater>YES</energyConsumptionContainsWarmWater>
-	<buildingEnergyRatingType>ENERGY_CONSUMPTION</buildingEnergyRatingType>
-	<additionalArea>435.017</additionalArea>
-	<numberOfFloors>three</numberOfFloors>
-	<additionalCosts>
-		<value>249.014</value>
-		<currency>EUR</currency>
-		<marketingType>RENT</marketingType>
-		<priceIntervalType>MONTH</priceIntervalType>
-	</additionalCosts>
-
-	<h:table>
-		<h:tr>
-			<h:td>Apples</h:td>
-			<h:td>Bananas</h:td>
-		</h:tr>
-	</h:table>
-	<f:table>
-		<f:name>African Coffee Table</f:name>
-		<f:width>80</f:width>
-		<f:length>120</f:length>
-	</f:table>
+	<testclass>
+		<testint>1231</testint>
+	</testclass>
 </realestates>
-

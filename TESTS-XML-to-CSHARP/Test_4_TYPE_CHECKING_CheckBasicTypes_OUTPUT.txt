@@ -1,0 +1,26 @@
+// using System.Xml.Serialization;
+// XmlSerializer serializer = new XmlSerializer(typeof(realestates));
+// using (StringReader reader = new StringReader(xml))
+// {
+//    var test = (realestates)serializer.Deserialize(reader);
+// }
+
+[XmlRoot(ElementName="realestates")]
+public class realestates { 
+
+	[XmlElement(ElementName="teststring")] 
+	public string teststring { get; set; } 
+
+	[XmlElement(ElementName="testdate")] 
+	public DateTime testdate { get; set; } 
+
+	[XmlElement(ElementName="doubletestingprop")] 
+	public double doubletestingprop { get; set; } 
+
+	[XmlElement(ElementName="boolean")] 
+	public bool boolean { get; set; } 
+
+	[XmlElement(ElementName="inttest")] 
+	public int inttest { get; set; } 
+}
+

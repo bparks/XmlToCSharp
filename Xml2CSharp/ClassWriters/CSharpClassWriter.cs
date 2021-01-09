@@ -28,13 +28,32 @@ namespace Xml2CSharp.ClassWriters
         private bool UsePascalCase { get { return _settings != null && _settings.ContainsKey("UsePascalCase") && _settings["UsePascalCase"].ToString().ToLower() == "true"; } }
         private bool UseFields { get { return _settings != null && _settings.ContainsKey("UseFields") && _settings["UseFields"].ToString().ToLower() == "true"; } }
 
+        public string GetTypeName(Field field, bool isInternal = false)
+        {
+            switch (isInternal ? field.InternalXmlType : field.XmlType)
+            {
+                case XmlType.Anything: return "object";
+                case XmlType.Array: return "List<" + GetTypeName(field, true) + ">";
+               // case XmlType.Dictionary: return "Dictionary<string, " + GetTypeName(type.InternalType, config) + ">";
+                case XmlType.Boolean: return "bool";
+                case XmlType.Float: return "double";
+                case XmlType.Integer: return "int";
+                case XmlType.Double: return "long";
+                case XmlType.DateTime: return "DateTime";
+                case XmlType.NonConstrained: return "object";
+                case XmlType.NullableBoolean: return "bool?";
+                case XmlType.NullableFloat: return "double?";
+                case XmlType.NullableInteger: return "int?";
+                case XmlType.NullableLong: return "long?";
+                case XmlType.NullableDate: return "DateTime?";
+                case XmlType.NullableSomething: return "object";
+               // case XmlType.Object: return type.NewAssignedName; // You need to use this for setting the object in the whatever
+                case XmlType.String: return "string";
+                default: throw new System.NotSupportedException("Unsupported xml type");
+            }
+        }
 
-        /*
-         
-        NOTE WHEN YOU ARE MAPPING THE XML TO C# TYPES
-        [SCEHMANAME]:NIL = "TRUE" means that the property is nullable and you should mapping correctly to the nullable type
-         
-         */
+
 
         public string Write(IEnumerable<Class> classInfo, string rootName)
         {
@@ -76,26 +95,34 @@ namespace Xml2CSharp.ClassWriters
                     if (!RemoveXMLAttributes)
                     {
                         if (AddNamespaceAttributes)
-                            sb.AppendFormat("{3}\t[Xml{0}({0}Name=\"{1}\", Namespace=\"{2}\")] {3}", field.XmlType, field.XmlName, field.Namespace, Environment.NewLine);
+                        {
+                            if (field.IsValue)
+                                sb.AppendFormat("{0}\t[XmlText] {0}", Environment.NewLine);
+                            else
+                            sb.AppendFormat("{3}\t[Xml{0}({0}Name=\"{1}\", Namespace=\"{2}\")] {3}", field.XmlAttributeType, field.XmlName, field.Namespace, Environment.NewLine);
+
+                        }
                         else
-                            sb.AppendFormat("{2}\t[Xml{0}({0}Name=\"{1}\")] {2}", field.XmlType, field.XmlName, Environment.NewLine);
+                        {
+                            if (field.IsValue)
+                                sb.AppendFormat("{0}\t[XmlText] {0}", Environment.NewLine);
+                            else
+                                sb.AppendFormat("{2}\t[Xml{0}({0}Name=\"{1}\")] {2}", field.XmlAttributeType, field.XmlName, Environment.NewLine);
+                        }
                     }
 
                     if (UsePascalCase)
-                    {
                         field.Name = field.Name.ToTitleCase();
-
-                        if (field.Type.ToLower() == field.Name.ToLower())
-                            field.Type = field.Name;
-                    }
 
                     if (!UsePascalCase) // Check for reserved words in case no pascal
                         if (ReservedKeywords.Contains(field.Name)) field.Name = "@" + field.Name;
 
+                    // If it's a class property then set the current name of the property as the name of the class
+                    var xmltype = field.InternalXmlType == XmlType.Class ? field.Name: GetTypeName(field);
                     if (UseFields)
-                        sb.AppendFormat("\tpublic {0} {1}; {2}", field.Type, field.Name, Environment.NewLine);
+                        sb.AppendFormat("\tpublic {0} {1}; {2}", xmltype, field.Name, Environment.NewLine);
                     else
-                        sb.AppendFormat("\tpublic {0} {1} {{ get; set; }} {2}", field.Type, field.Name, Environment.NewLine);
+                        sb.AppendFormat("\tpublic {0} {1} {{ get; set; }} {2}", xmltype, field.Name, Environment.NewLine);
                 }
                 sb.AppendLine("}");
                 sb.AppendLine("");

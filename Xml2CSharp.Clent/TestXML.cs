@@ -7,42 +7,58 @@ using System.Xml.Serialization;
 
 namespace Xml2CSharp.Clent
 {
-	[XmlRoot(ElementName = "additionalCosts")]
-	public class AdditionalCosts
+	// using System.Xml.Serialization;
+	// XmlSerializer serializer = new XmlSerializer(typeof(Realestates));
+	// using (StringReader reader = new StringReader(xml))
+	// {
+	//    var test = (Realestates)serializer.Deserialize(reader);
+	// }
+
+	[XmlRoot(ElementName = "externalId")]
+	public class ExternalId
 	{
-		[XmlElement(ElementName = "value")]
-		public string Value { get; set; }
-		[XmlElement(ElementName = "currency")]
-		public string Currency { get; set; }
-		[XmlElement(ElementName = "marketingType")]
-		public string MarketingType { get; set; }
-		[XmlElement(ElementName = "priceIntervalType")]
-		public string PriceIntervalType { get; set; }
+
+		[XmlAttribute(AttributeName = "teststring")]
+		public string Teststring { get; set; }
+
+		[XmlAttribute(AttributeName = "testint")]
+		public int Testint { get; set; }
+
+		[XmlAttribute(AttributeName = "testbool")]
+		public bool Testbool { get; set; }
+
+		[XmlAttribute(AttributeName = "testdouble")]
+		public double Testdouble { get; set; }
+
+		[XmlAttribute(AttributeName = "testdatetime")]
+		public DateTime Testdatetime { get; set; }
+
+		[XmlAttribute(AttributeName = "testdatetime2")]
+		public DateTime Testdatetime2 { get; set; }
+
+		[XmlText]
+		public int Text { get; set; }
+	}
+
+	[XmlRoot(ElementName = "testclass")]
+	public class Testclass
+	{
+
+		[XmlElement(ElementName = "testint")]
+		public int Testint { get; set; }
 	}
 
 	[XmlRoot(ElementName = "realestates")]
 	public class Realestates
 	{
+
 		[XmlElement(ElementName = "externalId")]
-		public string ExternalId { get; set; }
-		[XmlElement(ElementName = "title")]
-		public string Title { get; set; }
-		[XmlElement(ElementName = "creationDate")]
-		public string CreationDate { get; set; }
-		[XmlElement(ElementName = "lastModificationDate")]
-		public string LastModificationDate { get; set; }
-		[XmlElement(ElementName = "thermalCharacteristic")]
-		public string ThermalCharacteristic { get; set; }
-		[XmlElement(ElementName = "energyConsumptionContainsWarmWater")]
-		public string EnergyConsumptionContainsWarmWater { get; set; }
-		[XmlElement(ElementName = "buildingEnergyRatingType")]
-		public string BuildingEnergyRatingType { get; set; }
-		[XmlElement(ElementName = "additionalArea")]
-		public string AdditionalArea { get; set; }
-		[XmlElement(ElementName = "numberOfFloors")]
-		public string NumberOfFloors { get; set; }
-		[XmlElement(ElementName = "additionalCosts")]
-		public AdditionalCosts AdditionalCosts { get; set; }
+		public ExternalId ExternalId { get; set; }
+
+		[XmlElement(ElementName = "testclass")]
+		public Testclass Testclass { get; set; }
 	}
+
+
 
 }

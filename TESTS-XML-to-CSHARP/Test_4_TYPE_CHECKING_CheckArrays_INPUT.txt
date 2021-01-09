@@ -1,0 +1,9 @@
+   <arrayofobject>
+        <position>
+            <internet>testfd</internet>
+        </position>
+           <position>
+            <internet>dfd</internet>
+            <anotherfield>1</anotherfield>
+        </position>
+    </arrayofobject>

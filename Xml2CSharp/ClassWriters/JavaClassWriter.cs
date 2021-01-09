@@ -30,11 +30,13 @@ namespace Xml2CSharp.ClassWriters
                 foreach (var field in @class.Fields)
                 {
                     if (UseProperties)
-                        sb.AppendFormat("\tpublic {0} {1}; {2}", field.Type, field.Name, Environment.NewLine);
+                    {
+                        // sb.AppendFormat("\tpublic {0} {1}; {2}", field.ClassName, field.Name, Environment.NewLine);
+                    }
                     else
                     {
                         // To do remove the "string" condition
-                        sb.AppendFormat("\tpublic {0} {1}; {2}", field.Type == "string" ? "String" : field.Type, field.Name, Environment.NewLine);
+                      //  sb.AppendFormat("\tpublic {0} {1}; {2}", field.ClassName == "string" ? "String" : field.ClassName, field.Name, Environment.NewLine);
                     }
 
                 }
@@ -44,6 +46,11 @@ namespace Xml2CSharp.ClassWriters
 
             return sb.ToString();
 
+        }
+
+        public string GetTypeName(Field field, bool isInternal = false) 
+        {
+            throw new NotImplementedException();
         }
     }
 }

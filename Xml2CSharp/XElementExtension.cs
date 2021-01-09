@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -13,23 +14,26 @@ namespace Xml2CSharp
             return @classes;
         }
 
-        public static bool IsEmpty(this XElement element)
+        public static bool IsClass(this XElement element)
         {
-            return !element.HasAttributes && !element.HasElements;
+            return element.HasAttributes || element.HasElements;
         }
 
         private static Class ElementToClass(XElement xElement, ICollection<Class> classes)
         {
+
+            var extractedFields = ExtractFields(xElement, classes);
+            var replacedDuplicatesWithLists =  ReplaceDuplicatesWithLists(extractedFields).ToList();
             var @class = new Class
             {
                 Name = xElement.Name.LocalName,
                 XmlName = xElement.Name.LocalName,
-                Fields =  ReplaceDuplicatesWithLists(ExtractFields(xElement, classes)).ToList(),
+                Fields = replacedDuplicatesWithLists,
                 Namespace = xElement.Name.NamespaceName
             };
 
             SafeName(@class, @classes);
-            
+
             if (xElement.Parent == null || (!@classes.Contains(@class) && @class.Fields.Any()))
                 @classes.Add(@class);
 
@@ -42,14 +46,15 @@ namespace Xml2CSharp
             foreach (var element in xElement.Elements().ToList())
             {
                 var tempClass = ElementToClass(element, classes);
-                var type = element.IsEmpty() ? "string" : tempClass.Name;
-
+                var xmlType = element.IsClass() ? XmlType.Class : GetXmlType(element.Value);
+                var classXmlType = GetXmlType(element.Value);
                 yield return new Field
                 {
                     Name = tempClass.Name,
-                    Type = type,
+                    InternalXmlType = xmlType,
+                    XmlType = classXmlType,
                     XmlName = tempClass.XmlName,
-                    XmlType = XmlType.Element,
+                    XmlAttributeType = XmlAttributeType.Element,
                     Namespace = tempClass.Namespace
                 };
             }
@@ -60,15 +65,31 @@ namespace Xml2CSharp
                 {
                     Name = attribute.Name.LocalName,
                     XmlName = attribute.Name.LocalName,
-                    Type = attribute.Value.GetType().Name,
-                    XmlType = XmlType.Attribute,
+                    InternalXmlType = GetXmlType(attribute.Value),
+                    XmlType = GetXmlType(attribute.Value),
+                    XmlAttributeType = XmlAttributeType.Attribute,
                     Namespace = attribute.Name.NamespaceName
+                };
+            }
+
+            if (xElement.Attributes().Any() && !string.IsNullOrEmpty(xElement.Value.Trim()))
+            {
+                yield return new Field
+                {
+                    Name = "text",
+                    XmlName = "text",
+                    InternalXmlType = GetXmlType(xElement.Value),
+                    XmlType = GetXmlType(xElement.Value),
+                    XmlAttributeType = XmlAttributeType.Attribute,
+                    Namespace = xElement.Name.NamespaceName,
+                    IsValue = true
                 };
             }
         }
 
         private static IEnumerable<Field> ReplaceDuplicatesWithLists(IEnumerable<Field> fields)
         {
+            // It's an array of int -> and then handle it in code
             return fields.GroupBy(field => field.Name, field => field,
                 (key, g) =>
                     g.Count() > 1
@@ -76,10 +97,11 @@ namespace Xml2CSharp
                         {
                             Name = key,
                             Namespace = g.First().Namespace,
-                            Type = string.Format("List<{0}>", g.First().Type),
-                            XmlName = g.First().Type,
-                            XmlType = XmlType.Element
-                        } : 
+                            XmlName = g.First().Name,
+                            XmlType = XmlType.Array,
+                            InternalXmlType = g.First().InternalXmlType,
+                            XmlAttributeType = XmlAttributeType.Element
+                        } :
                         g.First()).ToList();
         }
 
@@ -99,6 +121,33 @@ namespace Xml2CSharp
         private static string StripBadCharacters(Class @class)
         {
             return @class.Name.Replace("-", "");
+        }
+
+        private static XmlType GetXmlType(string value)
+        {
+            bool boolobj; float floatobj; DateTime dateobj; int intobj;
+
+            // TEST BOOL
+            if (bool.TryParse(value, out boolobj))
+                return XmlType.Boolean;
+
+            // TEST DATETIME
+            if (DateTime.TryParse(value, out dateobj))
+                return XmlType.DateTime;
+
+            // TEST INT
+            if (int.TryParse(value, out intobj))
+                return XmlType.Integer;
+
+            // TEST FLOAT
+            if (float.TryParse(value, out floatobj))
+            return XmlType.Float;
+         
+            // TEST string
+            if (!string.IsNullOrEmpty(value))
+                return XmlType.String;
+
+            return XmlType.Anything;
         }
     }
 }

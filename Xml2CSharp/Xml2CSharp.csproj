@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XElementExtension.cs" />
     <Compile Include="Xml2CodeConverter.cs" />
+    <Compile Include="XmlAttributeType.cs" />
     <Compile Include="XmlType.cs" />
   </ItemGroup>
   <ItemGroup />
