@@ -1,1 +1,143 @@
-dfasdfadfasdf
+// using System.Xml.Serialization;
+// XmlSerializer serializer = new XmlSerializer(typeof(Response));
+// using (StringReader reader = new StringReader(xml))
+// {
+//    var test = (Response)serializer.Deserialize(reader);
+// }
+
+[XmlRoot(ElementName="data_source")]
+public class DataSource { 
+
+	[XmlAttribute(AttributeName="name")] 
+	public string Name { get; set; } 
+}
+
+[XmlRoot(ElementName="request")]
+public class Request { 
+
+	[XmlAttribute(AttributeName="type")] 
+	public string Type { get; set; } 
+}
+
+[XmlRoot(ElementName="quality_control_flags")]
+public class QualityControlFlags { 
+
+	[XmlElement(ElementName="auto_station")] 
+	public bool AutoStation { get; set; } 
+}
+
+[XmlRoot(ElementName="sky_condition")]
+public class SkyCondition { 
+
+	[XmlAttribute(AttributeName="sky_cover")] 
+	public string SkyCover { get; set; } 
+}
+
+[XmlRoot(ElementName="METAR")]
+public class METAR { 
+
+	[XmlElement(ElementName="raw_text")] 
+	public string RawText { get; set; } 
+
+	[XmlElement(ElementName="station_id")] 
+	public string StationId { get; set; } 
+
+	[XmlElement(ElementName="observation_time")] 
+	public DateTime ObservationTime { get; set; } 
+
+	[XmlElement(ElementName="latitude")] 
+	public double Latitude { get; set; } 
+
+	[XmlElement(ElementName="longitude")] 
+	public double Longitude { get; set; } 
+
+	[XmlElement(ElementName="temp_c")] 
+	public DateTime TempC { get; set; } 
+
+	[XmlElement(ElementName="dewpoint_c")] 
+	public DateTime DewpointC { get; set; } 
+
+	[XmlElement(ElementName="wind_dir_degrees")] 
+	public int WindDirDegrees { get; set; } 
+
+	[XmlElement(ElementName="wind_speed_kt")] 
+	public int WindSpeedKt { get; set; } 
+
+	[XmlElement(ElementName="visibility_statute_mi")] 
+	public double VisibilityStatuteMi { get; set; } 
+
+	[XmlElement(ElementName="altim_in_hg")] 
+	public double AltimInHg { get; set; } 
+
+	[XmlElement(ElementName="sea_level_pressure_mb")] 
+	public DateTime SeaLevelPressureMb { get; set; } 
+
+	[XmlElement(ElementName="quality_control_flags")] 
+	public QualityControlFlags QualityControlFlags { get; set; } 
+
+	[XmlElement(ElementName="sky_condition")] 
+	public SkyCondition SkyCondition { get; set; } 
+
+	[XmlElement(ElementName="flight_category")] 
+	public string FlightCategory { get; set; } 
+
+	[XmlElement(ElementName="metar_type")] 
+	public string MetarType { get; set; } 
+
+	[XmlElement(ElementName="elevation_m")] 
+	public double ElevationM { get; set; } 
+}
+
+[XmlRoot(ElementName="data")]
+public class Data { 
+
+	[XmlElement(ElementName="METAR")] 
+	public METAR METAR { get; set; } 
+
+	[XmlAttribute(AttributeName="num_results")] 
+	public int NumResults { get; set; } 
+
+	[XmlText] 
+	public string Text { get; set; } 
+}
+
+[XmlRoot(ElementName="response")]
+public class Response { 
+
+	[XmlElement(ElementName="request_index")] 
+	public int RequestIndex { get; set; } 
+
+	[XmlElement(ElementName="data_source")] 
+	public DataSource DataSource { get; set; } 
+
+	[XmlElement(ElementName="request")] 
+	public Request Request { get; set; } 
+
+	[XmlElement(ElementName="errors")] 
+	public object Errors { get; set; } 
+
+	[XmlElement(ElementName="warnings")] 
+	public object Warnings { get; set; } 
+
+	[XmlElement(ElementName="time_taken_ms")] 
+	public int TimeTakenMs { get; set; } 
+
+	[XmlElement(ElementName="data")] 
+	public Data Data { get; set; } 
+
+	[XmlAttribute(AttributeName="xsd")] 
+	public string Xsd { get; set; } 
+
+	[XmlAttribute(AttributeName="xsi")] 
+	public string Xsi { get; set; } 
+
+	[XmlAttribute(AttributeName="version")] 
+	public DateTime Version { get; set; } 
+
+	[XmlAttribute(AttributeName="noNamespaceSchemaLocation")] 
+	public string NoNamespaceSchemaLocation { get; set; } 
+
+	[XmlText] 
+	public string Text { get; set; } 
+}
+

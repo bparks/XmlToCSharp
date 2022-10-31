@@ -1,10 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<realestates>
-    <externalId teststring="string" testint="1" testbool="yes" testdouble="23.231231" >100011</externalId>
-    <title>RestAPI - Immobilienscout24 Testobjekt! +++BITTE+++ NICHT kontaktieren - Industry</title>
-    <creationDate>2013-12-06T15:12:09</creationDate>
-    <lastModificationDate>2014-07-08T15:12:09</lastModificationDate>
-    <doubletestingprop>32.678</doubletestingprop>
-    <energyConsumptionContainsWarmWater>YES</energyConsumptionContainsWarmWater>
-    <boolean>true</boolean>
-</realestates>
+<response
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:noNamespaceSchemaLocation="http://www.aviationweather.gov/static/adds/schema/metar1_2.xsd">
+	<request_index>493837914</request_index>
+	<data_source name="metars"/>
+	<request type="retrieve"/>
+	<errors/>
+	<warnings/>
+	<time_taken_ms>3</time_taken_ms>
+	<data num_results="1">
+		<METAR>
+			<raw_text>KCMA 251355Z 00000KT 8SM CLR 16/14 A2995 RMK AO2 SLP149 T01610144</raw_text>
+			<station_id>KCMA</station_id>
+			<observation_time>2022-08-25T13:55:00Z</observation_time>
+			<latitude>34.22</latitude>
+			<longitude>-119.1</longitude>
+			<temp_c>16.1</temp_c>
+			<dewpoint_c>14.4</dewpoint_c>
+			<wind_dir_degrees>0</wind_dir_degrees>
+			<wind_speed_kt>0</wind_speed_kt>
+			<visibility_statute_mi>8.0</visibility_statute_mi>
+			<altim_in_hg>29.949802</altim_in_hg>
+			<sea_level_pressure_mb>1014.9</sea_level_pressure_mb>
+			<quality_control_flags>
+				<auto_station>TRUE</auto_station>
+			</quality_control_flags>
+			<sky_condition sky_cover="CLR"/>
+			<flight_category>VFR</flight_category>
+			<metar_type>METAR</metar_type>
+			<elevation_m>20.0</elevation_m>
+		</METAR>
+	</data>
+</response>
